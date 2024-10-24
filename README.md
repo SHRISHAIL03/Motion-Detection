@@ -1,5 +1,3 @@
-# Motion-Detection
-Motion Detection System with Live Image Capture and Email Notification
 import cv2
 import pygame
 import smtplib
@@ -12,7 +10,7 @@ from email import encoders
 pygame.mixer.init()
 
 # Load the alarm sound
-alarm_sound = pygame.mixer.Sound("C:\\Users\\ADMIN\\Downloads\\police-operation-siren-144229.mp3")
+alarm_sound = pygame.mixer.Sound(r"C:\Users\ADMIN\OneDrive\Desktop\police-siren-sound-effect-240674.mp3")
 
 # SMTP server configuration (example for Gmail)
 smtp_server = "smtp.gmail.com"
@@ -24,6 +22,7 @@ smtp_password = "djmq rawv yqev dezu"
 email_from = "shri480n@gmail.com"
 email_to = "shri480n@gmail.com"
 email_subject = "Motion Detected!"
+
 
 # Function to send an email with an attached video
 def send_email(video_path):
@@ -45,6 +44,7 @@ def send_email(video_path):
         server.starttls()
         server.login(smtp_username, smtp_password)
         server.sendmail(email_from, email_to, msg.as_string())
+
 
 try:
     # Capture video from the webcam
